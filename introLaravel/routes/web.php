@@ -9,9 +9,13 @@ Route::get('/', function () {
 
 
 
-// Ruta de tipo VIEW
+// Rutas de tipo VIEW
 Route::view('/', 'welcome');
 
-Route::view('/form', 'formulario');
+Route::view('/form', 'formulario')->name('rutaformulario');
+
+Route::view('/clin', 'clientes')->name('rutaclientes');
+
+Route::view('/in', 'inicio')->name('rutainicio');
 
 
