@@ -10,12 +10,8 @@ Route::get('/', function () {
 
 
 // Rutas de tipo VIEW
-Route::view('/', 'welcome');
+Route::view('/', 'inicio')->name('rutainicio');
 
 Route::view('/form', 'formulario')->name('rutaformulario');
 
-Route::view('/clin', 'clientes')->name('rutaclientes');
-
-Route::view('/in', 'inicio')->name('rutainicio');
-
-
+Route::view('/clientes', 'clientes')->name('rutaclientes');

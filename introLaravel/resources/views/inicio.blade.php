@@ -19,8 +19,8 @@
         <h1 class="dispaly-1">Bienvenido Turista</h1>
         <p>Presiona el boton para iniciar.....</p>
 
-        <a href="{{ route('rutaformulario') }}" class="btn btn-primary">Ir al registro</a>
-        
+
+        <a href="{{ route('rutaformulario') }}" class="btn btn-success">Ir al registro</a>
 
     </div>
     
