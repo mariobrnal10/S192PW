@@ -7,3 +7,4 @@ use App\Http\Controllers\controladorTodo;
     return view('welcome');
 }); */
 Route::get('/', [controladorTodo::class, 'home'])->name('rutainicio');
+Route::get('/repaso', [controladorTodo::class, 'repaso'])->name('rutarepaso');

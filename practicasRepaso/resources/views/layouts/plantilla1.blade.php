@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    @vite(['resources/js/app.js'])
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -17,7 +18,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link {{ request()->routeIs('')?'text-warning':''}}" aria-current="page" href=""></a>
+                    <a class="nav-link {{ request()->routeIs('rutarepaso')?'text-warning':''}}" aria-current="page" href="{{route('rutarepaso')}}">Repaso</a>
                 </li>
             </ul>
         </div>

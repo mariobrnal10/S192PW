@@ -9,4 +9,8 @@ class controladorTodo extends Controller
     public function home(){
         return view('inicio');
     }
+
+    public function repaso(){
+        return view('repaso1');
+    }
 }
