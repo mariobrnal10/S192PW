@@ -15,6 +15,7 @@ class controladorTodo extends Controller
     }
 
     public function convertir(Request $request){
+        
         $cantidad = $request->input('cantidad');
         $tipoConversion = $request->input('tipoConversion');
         $resultado = 0;

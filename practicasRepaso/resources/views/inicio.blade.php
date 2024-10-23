@@ -23,7 +23,7 @@
         <p>Repaso 1</p>
         <p>Prof: Ivan Isay Guerra Lopez</p>
 
-        <a href="{{route('rutarepaso')}}" class="btn btn-primary">Repaso</a>
+        <a href="{{route('rutarepaso')}}" class="btn btn-primary">Repaso 1</a>
     </div>
 </body>
 </html>
