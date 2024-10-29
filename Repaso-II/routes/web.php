@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ControladorView;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ControladorView::class, 'home'])->name('rutaHome');
+Route::get('/book', [ControladorView::class, 'libro'])->name('rutaLibro');
