@@ -1,64 +1,58 @@
 @extends('layouts.plantilla')
 
-@section('titulo' 'Libros')
+@section('titulo', 'Libros')
 
-@section('css-')
-    <link rel="stylesheet" href="">
+@section('css-registro')
+    <link rel="stylesheet" href="{{asset('css/registro.css')}}">
 @endsection
 
 @section('contenidoLibro')
-<form class="row g-3">
-    <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">Email</label>
-        <input type="email" class="form-control" id="inputEmail4">
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="form-container p-4 col-md-8">
+        <form class="row g-3">
+            <h1 class="text-center">Registro De Libros</h1>
+            <div class="col-md-6">
+                <label for="inputISBN" class="form-label">ISBN</label>
+                <input type="number" class="form-control" name="inputISBN">
+            </div>
+            
+            <div class="col-md-6">
+                <label for="inputTitulo" class="form-label">Título</label>
+                <input type="text" class="form-control" name="Titulo">
+            </div>
+            
+            <div class="col-md-6">
+                <label for="inputAutor" class="form-label">Autor</label>
+                <input type="text" class="form-control" name="Autor">
+            </div>
+            
+            <div class="col-md-6">
+                <label for="inputPaginas" class="form-label">Páginas</label>
+                <input type="number" class="form-control" name="Paginas">
+            </div>
+        
+            <div class="col-md-6">
+                <label for="inputAnio" class="form-label">Año</label>
+                <input type="date" class="form-control" name="Año">
+            </div>
+        
+            <div class="col-md-6">
+                <label for="inputEditorial" class="form-label">Editorial</label>
+                <input type="text" class="form-control" name="Editorial">
+            </div>
+        
+            <div class="col-md-6">
+                <label for="inputEmailEditorial" class="form-label">Email de Editorial</label>
+                <input type="email" class="form-control" name="EmailEditorial">
+            </div>
+
+            <div class="col-12">
+                <button type="submit" class="btn btn-dark w-100">Enviar</button>
+
+            </div>
+        </form>
     </div>
-    
-    <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Password</label>
-        <input type="password" class="form-control" id="inputPassword4">
-    </div>
-    
-    <div class="col-12">
-        <label for="inputAddress" class="form-label">Address</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-    </div>
-    
-    <div class="col-12">
-        <label for="inputAddress2" class="form-label">Address 2</label>
-        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-    </div>
-    
-    <div class="col-md-6">
-        <label for="inputCity" class="form-label">City</label>
-        <input type="text" class="form-control" id="inputCity">
-    </div>
-    
-    <div class="col-md-4">
-        <label for="inputState" class="form-label">State</label>
-      <select id="inputState" class="form-select">
-        <option selected>Choose...</option>
-        <option>...</option>
-      </select>
-    </div>
-    
-    <div class="col-md-2">
-      <label for="inputZip" class="form-label">Zip</label>
-      <input type="text" class="form-control" id="inputZip">
-    </div>
-    
-    <div class="col-12">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gridCheck">
-        <label class="form-check-label" for="gridCheck">
-          Check me out
-        </label>
-      </div>
-    </div>
-    
-    <div class="col-12">
-      <button type="submit" class="btn btn-primary">Sign in</button>
-    </div>
-  </form>
-  
-    
+</div>
+
 @endsection
