@@ -8,7 +8,7 @@
           <div class="container mt-5 col-md-6">
 
             @if (session('exito'))
-              <x-Alert tipo="success"> {{ session('exito') }} </x-Alert>
+               <x-Alert tipo="success"> {{ session('exito') }} </x-Alert>
             @endif
 
             @session('exito')
@@ -34,7 +34,7 @@
               </div>
               <div class="card-body text-justify">
                 
-                <form action="{{route('enviaCliente')}}" method="POST">
+                <form action="enviarCliente" method="POST">
 
                   @csrf 
 
