@@ -10,11 +10,12 @@ use App\Http\Requests\validadorClientes;
 class clienteController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Nos sirve para la consulta del crud.
      */
     public function index()
     {
-        //
+        $consultaClientes = DB::table('clientes')->get();
+        return view('clientes', compact('consultaClientes'));
     }
 
     /**
@@ -56,9 +57,11 @@ class clienteController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit( $id)
     {
-        //
+        $ids = DB::table('clientes')->where('id', $id)->first();
+
+        return view('edit', compact('cliente'));
     }
 
     /**

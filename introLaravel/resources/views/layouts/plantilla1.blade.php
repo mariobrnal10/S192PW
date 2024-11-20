@@ -31,5 +31,6 @@
 
        @yield('contenido')
        @yield('contenido2')
+       @yield('ContenidoEditar')
 </body>
 </html>
