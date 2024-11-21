@@ -71,12 +71,7 @@ class clienteController extends Controller
     public function update(validadorClientes $request, $id)
     {
         
-        $request->validate([
-        'txtnombre' => 'required|min:3|max:255',
-        'txtapellido' => 'required',
-        'txtcorreo' => 'required|email:rfc,dns',
-        'txttelefono' => 'required|numeric',
-    ]);
+        
 
        // Actualiza el nuevo cambio de en la base de datos
         DB::table('clientes')->where('id', $id)->update([
