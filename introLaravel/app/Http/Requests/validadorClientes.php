@@ -22,7 +22,7 @@ class validadorClientes extends FormRequest
     public function rules(): array
     {
         return [
-            'txtnombre' => 'required|min:5|max:255',
+            'txtnombre' => 'required|min:3|max:255',
             'txtapellido' => 'required',
             'txtcorreo' => 'required|email:rfc,dns',
             'txttelefono' => 'required|numeric',

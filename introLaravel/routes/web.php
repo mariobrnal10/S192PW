@@ -22,3 +22,7 @@ Route::post('/cliente', [clienteController::class, 'store'])->name('enviaCliente
 Route::get('/cliente', [clienteController::class, 'index'])->name('rutaclientes');
 
 Route::get('/clientes/{id}/edit', [clienteController::class, 'edit'])->name('rutaEdit');
+
+Route::put('/clientes/{id}', [clienteController::class, 'update'])->name('cliente.update');
+
+Route::delete('/clientes/{id}', [clienteController::class, 'destroy'])->name('cliente.destroy');

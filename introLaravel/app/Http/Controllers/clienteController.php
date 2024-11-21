@@ -59,24 +59,55 @@ class clienteController extends Controller
      */
     public function edit( $id)
     {
-        $ids = DB::table('clientes')->where('id', $id)->first();
+        
+    $cliente = DB::table('clientes')->where('id', $id)->first();
 
-        return view('edit', compact('cliente'));
+    return view('edit', compact('cliente'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(validadorClientes $request, $id)
     {
-        //
+        
+        $request->validate([
+        'txtnombre' => 'required|min:3|max:255',
+        'txtapellido' => 'required',
+        'txtcorreo' => 'required|email:rfc,dns',
+        'txttelefono' => 'required|numeric',
+    ]);
+
+       // Actualiza el nuevo cambio de en la base de datos
+        DB::table('clientes')->where('id', $id)->update([
+        'nombre' => $request->input('txtnombre'),
+        'apellido' => $request->input('txtapellido'),
+        'correo' => $request->input('txtcorreo'),
+        'telefono' => $request->input('txttelefono'),
+        'updated_at' => Carbon::now(),
+    ]);
+    
+    $usuario = $request->input('txtnombre');
+    session()->flash('exito', 'Se Modifico El Usuario: ' . $usuario);
+    return to_route('rutaclientes');
+
+
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request, $id)
     {
-        //
+        $cliente = DB::table('clientes')->where('id', $id)->first();
+
+        DB::table('clientes')->where('id', $id)->delete();
+        session()->flash('exito', 'El cliente ' . $cliente->nombre . ' ha sido eliminado exitosamente.');
+        return to_route('rutaclientes');
+    
+
+        return to_route('rutaclientes');
     }
+
+
 }
